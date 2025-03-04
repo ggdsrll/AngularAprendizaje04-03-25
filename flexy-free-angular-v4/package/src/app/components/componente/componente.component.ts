@@ -21,8 +21,8 @@ interface Amiibo {
 
 @Component({
   selector: 'app-componente',
-  standalone: true, // Añade standalone: true si es un componente standalone
-  imports: [CommonModule, HttpClientModule], // Importa CommonModule y HttpClientModule
+  standalone: true,
+  imports: [CommonModule,],
   templateUrl: './componente.component.html',
   styleUrls: ['./componente.component.scss']
 })
@@ -30,20 +30,16 @@ export class ComponenteComponent implements OnInit {
   amiiboList: Amiibo[] = [];
   apiUrl = 'https://www.amiiboapi.com/api/amiibo/?format=json';
 
-  constructor(private http: HttpClient) { }
+  constructor(private readonly http: HttpClient) { }
 
   ngOnInit(): void {
-    console.log('ngOnInit se está ejecutando'); 
     this.fetchAmiiboData();
   }
 
   fetchAmiiboData() {
-    console.log('fetchAmiiboData se está ejecutando'); 
     this.http.get<{ amiibo: Amiibo[] }>(this.apiUrl)
       .subscribe(response => {
-        console.log('Respuesta de la API recibida:', response); 
         this.amiiboList = response.amiibo;
-        console.log('amiiboList actualizado:', this.amiiboList); 
       });
   }
 }
