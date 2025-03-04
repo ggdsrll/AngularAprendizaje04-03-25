@@ -29,11 +29,6 @@ export const routes: Routes = [
         loadChildren: () =>
           import('./pages/extra/extra.routes').then((m) => m.ExtraRoutes),
       },
-      {
-        path: 'componente',
-        loadChildren: () =>
-          import('./pages/componente/componente.routes').then((m) => m.ComponenteRoutes),
-      },
     ],
   },
   {
