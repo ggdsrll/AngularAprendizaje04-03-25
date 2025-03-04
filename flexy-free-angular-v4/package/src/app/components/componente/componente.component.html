@@ -1,0 +1,25 @@
+<div class="container">
+    <h2>Lista de Amiibo</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Personaje</th>
+                <th>Serie de Juego</th>
+                <th>Serie Amiibo</th>
+                <th>Tipo</th>
+                <th>Imagen</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let amiibo of amiiboList">
+                <td>{{ amiibo.name }}</td>
+                <td>{{ amiibo.character }}</td>
+                <td>{{ amiibo.gameSeries }}</td>
+                <td>{{ amiibo.amiiboSeries }}</td>
+                <td>{{ amiibo.type }}</td>
+                <td><img [src]="amiibo.image" alt="{{ amiibo.name }}" width="50"></td>
+            </tr>
+        </tbody>
+    </table>
+</div>

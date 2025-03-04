@@ -12,7 +12,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Componente',
     iconName: 'layout-grid-add',
-    route: '/dashboard',
+    route: '/dashboard/componente',
   },
   {
     displayName: 'Analytical',
