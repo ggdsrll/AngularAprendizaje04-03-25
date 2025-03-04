@@ -7,7 +7,7 @@ export const navItems: NavItem[] = [
   {
     displayName: 'Dashboard',
     iconName: 'layout-grid-add',
-    route: '/dashboard',
+    route: '/componente',
   },
   {
     displayName: 'Componente',
